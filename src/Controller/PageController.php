@@ -9,9 +9,10 @@
 namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class PageController
+class PageController extends AbstractController
 {
     /**
      * @Route("/")
@@ -25,8 +26,8 @@ class PageController
      * @Route("/student/{student}")
      */
     public function show($student){
-        return new Response(sprintf('Strona o uczniu: %s',
-            $student
-        ));
+       return $this->render('student.html.twig', [
+           'title' => $student
+       ]);
     }
 }
