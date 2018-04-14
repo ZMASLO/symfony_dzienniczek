@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+Dodaj ucznia
+{% endblock %}
+{% block body %}
+<div>
+    Tutaj można dodać ucznia
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+</div>
+{% endblock %}
