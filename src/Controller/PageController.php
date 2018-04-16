@@ -29,11 +29,16 @@ class PageController extends AbstractController
     }
 
     /**
-     * @Route("/student/{student}")
+     * @Route("/student/{id}")
      */
-    public function show($student){
+    public function show($id){
+        $student = $this->getDoctrine()
+            ->getRepository(Student::class)
+            ->find($id);
+
        return $this->render('student.html.twig', [
-           'title' => $student
+           'name' => $student->getName(),
+           'secondname' => $student->getSecondname()
        ]);
     }
 
@@ -53,9 +58,9 @@ class PageController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($student);
             $entityManager->flush();
-            return $this->redirectToRoute('homepage')
+            return $this->redirectToRoute('homepage');
         }
-        return $this->render('add_student.html.twig',[
+        return $this->render('new_student.html.twig',[
             'form' => $form->createView()
         ]);
     }
