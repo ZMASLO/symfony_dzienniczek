@@ -9,6 +9,8 @@
 namespace App\Controller;
 
 use App\Entity\AddUser;
+use App\Entity\Student;
+use function PHPSTORM_META\type;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -36,21 +38,24 @@ class PageController extends AbstractController
     }
 
     /**
-     * @Route("/add_student", name="add_student")
+     * @Route("/new_student", name="new_student")
      */
-    public function add_user(Request $request){
-        $adduser = new AddUser();
-        $form = $this->createFormBuilder($adduser)
-            ->add('name', TextType::class, ['label' => 'Imie ucznia', 'empty_data' => 'Jan'])
-            ->add('secondname', TextType::class, ['label' => 'Nazwisko ucznia', 'empty_data' => 'Kowalski'])
-            ->add('save', SubmitType::class, array('label' => 'Dodaj ucznia'))
+    public function new_user(Request $request){
+        $student = new Student();
+        $form = $this->createFormBuilder($student)
+            ->add('name', TextType::class)
+            ->add('secondname', TextType::class)
+            ->add('save',SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $form = $form->getData();
-            return $this->redirectToRoute('homepage');
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($student);
+            $entityManager->flush();
+            return $this->redirectToRoute('homepage')
         }
-        return $this->render('add_student.html.twig', [
+        return $this->render('add_student.html.twig',[
             'form' => $form->createView()
         ]);
     }
