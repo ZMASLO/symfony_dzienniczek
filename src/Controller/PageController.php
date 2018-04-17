@@ -83,7 +83,8 @@ class PageController extends AbstractController
     public function delete_student($id){
         $entityManager = $this->getDoctrine();
         $student = $entityManager->getRepository(Student::class)->find($id);
-        $this->remove
+        $entityManager->remove($student);
+        $entityManager->flush();
         return $this->redirectToRoute('list_students');
 
     }
