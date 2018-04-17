@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+Lista uczniów
+{% endblock %}
+{% block body %}
+    {% for student in students %}
+        <div>
+            {{ student.name }} {{ student.secondname}} <button>Edytuj</button> <a href="/delete_student/{{ student.id }}"><button>Usuń</button></a>
+        </div>
+    {% endfor %}
+{% endblock %}

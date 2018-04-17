@@ -35,13 +35,26 @@ class PageController extends AbstractController
         $student = $this->getDoctrine()
             ->getRepository(Student::class)
             ->find($id);
-
+        if(!$student){
+            throw $this->createNotFoundException(
+                'Brak ucznia o id: '.$id
+            );
+        }
        return $this->render('student.html.twig', [
            'name' => $student->getName(),
            'secondname' => $student->getSecondname()
        ]);
     }
 
+    /**
+     * @Route("/list_students", name="list_students")
+     */
+    public function list_students(){
+        $students = $this->getDoctrine()->getRepository(Student::class)->findAll();
+        return $this->render('list_students.html.twig',[
+           'students' => $students
+        ]);
+    }
     /**
      * @Route("/new_student", name="new_student")
      */
@@ -63,5 +76,15 @@ class PageController extends AbstractController
         return $this->render('new_student.html.twig',[
             'form' => $form->createView()
         ]);
+    }
+    /**
+     * @Route("/delete_student/{id}")
+     */
+    public function delete_student($id){
+        $entityManager = $this->getDoctrine();
+        $student = $entityManager->getRepository(Student::class)->find($id);
+        $this->remove
+        return $this->redirectToRoute('list_students');
+
     }
 }
