@@ -73,7 +73,7 @@ class PageController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($student);
             $entityManager->flush();
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('list_students');
         }
         return $this->render('new_student.html.twig',[
             'form' => $form->createView()
@@ -83,7 +83,7 @@ class PageController extends AbstractController
      * @Route("/delete_student/{id}")
      */
     public function delete_student($id){
-        $entityManager = $this->getDoctrine();
+        $entityManager = $this->getDoctrine()->getManager();
         $student = $entityManager->getRepository(Student::class)->find($id);
         $entityManager->remove($student);
         $entityManager->flush();
