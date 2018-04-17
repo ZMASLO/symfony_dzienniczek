@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use App\Entity\AddUser;
+use App\Entity\Presence;
 use App\Entity\Student;
 use function PHPSTORM_META\type;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -25,6 +26,7 @@ class PageController extends AbstractController
      */
     public function homepage()
     {
+
         return $this->render('homepage.html.twig',[
             'wiadomosc' => 'strona startowa'
         ]);
@@ -37,6 +39,7 @@ class PageController extends AbstractController
         $student = $this->getDoctrine()
             ->getRepository(Student::class)
             ->find($id);
+        $presence=$this->getDoctrine()->getRepository(Presence::class)->find($id);
         if(!$student){
             throw $this->createNotFoundException(
                 'Brak ucznia o id: '.$id
@@ -44,7 +47,9 @@ class PageController extends AbstractController
         }
        return $this->render('student.html.twig', [
            'name' => $student->getName(),
-           'secondname' => $student->getSecondname()
+           'secondname' => $student->getSecondname(),
+           'date' => $presence->getDate(),
+           'presence' => $presence->getPresence()
        ]);
     }
 
