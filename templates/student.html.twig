@@ -6,7 +6,9 @@
 <h1>Uczeń: {{ name }} {{ secondname }}</h1>
 
     <div>
-        {% for presences in presence %}
+        {% for pre in presence %}
+            <div>{{ pre.date|date("d/m/Y") }} {{ pre.status }}</div>
+        {% endfor %}
     </div>
 
 {% endblock %}

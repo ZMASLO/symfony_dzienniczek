@@ -36,10 +36,10 @@ class PageController extends AbstractController
      * @Route("/student/{id}")
      */
     public function show($id){
-        $student = $this->getDoctrine()
-            ->getRepository(Student::class)
-            ->find($id);
-        $presence=$this->getDoctrine()->getRepository(Presence::class)->find($id);
+        $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
+        $presence=$this->getDoctrine()->getRepository(Presence::class)->findBy(
+            ['student' => $id]
+        );
         if(!$student){
             throw $this->createNotFoundException(
                 'Brak ucznia o id: '.$id
@@ -48,8 +48,7 @@ class PageController extends AbstractController
        return $this->render('student.html.twig', [
            'name' => $student->getName(),
            'secondname' => $student->getSecondname(),
-           'date' => $presence->getDate(),
-           'presence' => $presence->getPresence()
+           'presence' => $presence
        ]);
     }
 
@@ -94,5 +93,20 @@ class PageController extends AbstractController
         $entityManager->flush();
         return $this->redirectToRoute('list_students');
 
+    }
+    /**
+     * @Route("/add/{id}")
+     */
+    public function add_presence($id){
+        $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
+        $presence = new Presence();
+        $presence->setStudent($student);
+        $presence->setDate(new \DateTime());
+        $presence->setStatus('O');
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($presence);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('list_students');
     }
 }
