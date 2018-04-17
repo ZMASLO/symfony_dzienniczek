@@ -6,6 +6,11 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <nav>
+            <a href="/"><button>Strona startowa</button></a>
+            <a href="/list_students"><button>Lista uczniów</button></a>
+            <a href="/new_student"><button>Dodaj ucznia</button></a>
+        </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

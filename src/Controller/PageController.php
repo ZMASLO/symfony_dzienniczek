@@ -25,7 +25,9 @@ class PageController extends AbstractController
      */
     public function homepage()
     {
-        return new Response('hello!');
+        return $this->render('homepage.html.twig',[
+            'wiadomosc' => 'strona startowa'
+        ]);
     }
 
     /**
@@ -61,8 +63,8 @@ class PageController extends AbstractController
     public function new_user(Request $request){
         $student = new Student();
         $form = $this->createFormBuilder($student)
-            ->add('name', TextType::class)
-            ->add('secondname', TextType::class)
+            ->add('name', TextType::class, ['label'=>'Imie'])
+            ->add('secondname', TextType::class, ['label'=>'Nazwisko'])
             ->add('save',SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
