@@ -94,15 +94,22 @@ class PageController extends AbstractController
     public function delete_student($id){
         $entityManager = $this->getDoctrine()->getManager();
         $student = $entityManager->getRepository(Student::class)->find($id);
+        $presence = $entityManager->getRepository(Presence::class)->findBy([
+            'student' => $id
+        ]);
+        $entityManager->remove($presence);
         $entityManager->remove($student);
         $entityManager->flush();
         return $this->redirectToRoute('list_students');
 
     }
     /**
-     * @Route("/add/{id}/{status}")
+     * @Route("/presence/{id}/{status}")
      */
-    public function add_presence($id, $status){
+    public function presence($id, $status){
+        if($status!='O' && $status!='N' && $status!='S'){
+            return $this->redirectToRoute('homepage');
+        }
         $entityManager = $this->getDoctrine()->getManager();
         $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
         $presence = $this->getDoctrine()->getRepository(Presence::class)->findOneBy([

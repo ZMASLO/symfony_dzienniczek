@@ -3,15 +3,15 @@
 {% block body %}
     {% for student in students %}
         <div>
-            {{ student.name }} {{ student.secondname }} Stan:
+            <a href="/student/{{ student.id }}"> {{ student.name }} {{ student.secondname }} </a> Stan:
             {% for pre in presence %}
                 {% if pre.student == student %}
-                {{ pre.status }}
+                    {{ pre.status }}
                 {% endif %}
             {% endfor %}
-            <a href="/add/{{student.id}}/O"><button>Obecny</button></a>
-            <a href="/add/{{student.id}}/S"><button>Spóźniony</button></a>
-            <a href="/add/{{student.id}}/N"><button>Nie obecny</button></a>
+            <a href="/presence/{{student.id}}/O"><button>Obecny</button></a>
+            <a href="/presence/{{student.id}}/S"><button>Spóźniony</button></a>
+            <a href="/presence/{{student.id}}/N"><button>Nie obecny</button></a>
         </div>
     {% endfor %}
 {% endblock %}
