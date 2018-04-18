@@ -6,7 +6,7 @@
             {{ student.name }} {{ student.secondname }} Stan:
             {% for pre in presence %}
                 {% if pre.student == student %}
-                <p>{{ pre.status }}</p>
+                {{ pre.status }}
                 {% endif %}
             {% endfor %}
             <a href="/add/{{student.id}}"><button>Obecny</button></a> <button>Spóźniony</button> <button>Nie obecny</button>
