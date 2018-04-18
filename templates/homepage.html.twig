@@ -1,5 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ wiadomosc }}
+    {% for student in students %}
+        <div>
+            {{ student.name }} {{ student.secondname }} Stan:
+            {% for pre in presence %}
+                {% if pre.student == student %}
+                <p>{{ pre.status }}</p>
+                {% endif %}
+            {% endfor %}
+            <a href="/add/{{student.id}}"><button>Obecny</button></a> <button>Spóźniony</button> <button>Nie obecny</button>
+        </div>
+    {% endfor %}
 {% endblock %}

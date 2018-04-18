@@ -18,6 +18,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class PageController extends AbstractController
 {
@@ -26,9 +27,13 @@ class PageController extends AbstractController
      */
     public function homepage()
     {
-
+        $student=$this->getDoctrine()->getRepository(Student::class)->findAll();
+        $presence=$this->getDoctrine()->getRepository(Presence::class)->findBy([
+            'date' => new \DateTime()
+        ]);
         return $this->render('homepage.html.twig',[
-            'wiadomosc' => 'strona startowa'
+            'students' => $student,
+            'presence' => $presence
         ]);
     }
 
@@ -107,6 +112,6 @@ class PageController extends AbstractController
         $entityManager->persist($presence);
         $entityManager->flush();
 
-        return $this->redirectToRoute('list_students');
+        return $this->redirectToRoute('homepage');
     }
 }
