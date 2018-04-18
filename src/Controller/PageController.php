@@ -100,18 +100,26 @@ class PageController extends AbstractController
 
     }
     /**
-     * @Route("/add/{id}")
+     * @Route("/add/{id}/{status}")
      */
-    public function add_presence($id){
-        $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
-        $presence = new Presence();
-        $presence->setStudent($student);
-        $presence->setDate(new \DateTime());
-        $presence->setStatus('O');
+    public function add_presence($id, $status){
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($presence);
+        $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
+        $presence = $this->getDoctrine()->getRepository(Presence::class)->findOneBy([
+            'student' => $id,
+            'date' => new \DateTime()
+        ]);
+        if(!$presence){
+            $presence = new Presence();
+            $presence->setStudent($student);
+            $presence->setDate(new \DateTime());
+            $presence->setStatus($status);
+            $entityManager->persist($presence);
+            $entityManager->flush();
+            return $this->redirectToRoute('homepage');
+        }
+        $presence->setStatus($status);
         $entityManager->flush();
-
         return $this->redirectToRoute('homepage');
     }
 }

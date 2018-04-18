@@ -9,7 +9,9 @@
                 {{ pre.status }}
                 {% endif %}
             {% endfor %}
-            <a href="/add/{{student.id}}"><button>Obecny</button></a> <button>Spóźniony</button> <button>Nie obecny</button>
+            <a href="/add/{{student.id}}/O"><button>Obecny</button></a>
+            <a href="/add/{{student.id}}/S"><button>Spóźniony</button></a>
+            <a href="/add/{{student.id}}/N"><button>Nie obecny</button></a>
         </div>
     {% endfor %}
 {% endblock %}
