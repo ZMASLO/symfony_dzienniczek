@@ -3,7 +3,12 @@
 {% block body %}
     <a href="/date/{{ date|date_modify("-1 day")|date("Y-m-d")}}"><button> < </button></a>
     {{ date|date("Y-m-d") }}
+    {% if date|date_modify("+1 day")|date("Y-m-d") > "now"|date("Y-m-d") %}
+        <button> > </button>
+    {% endif %}
+    {% if date|date_modify("+1 day")|date("Y-m-d") <= "now"|date("Y-m-d") %}
     <a href="/date/{{ date|date_modify("+1 day")|date("Y-m-d")}}"><button> > </button></a>
+    {% endif %}
     {% for student in students %}
         <div>
             <a href="/student/{{ student.id }}"> {{ student.name }} {{ student.secondname }} </a> Stan:

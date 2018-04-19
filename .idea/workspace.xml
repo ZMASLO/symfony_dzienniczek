@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a047d76d-b4c5-4fb4-94ae-1c10a73b0729" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,17 +32,17 @@
       <file leaf-file-name="Presence.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Presence.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+            <state relative-caret-position="210">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PageController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/PageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="139" column="62" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+            <state relative-caret-position="318">
+              <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
               <folding>
                 <element signature="e#115#138#0#PHP" expanded="true" />
               </folding>
@@ -54,8 +53,8 @@
       <file leaf-file-name="list_students.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/list_students.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="105">
+              <caret line="7" column="97" selection-start-line="7" selection-start-column="97" selection-end-line="7" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -63,17 +62,17 @@
       <file leaf-file-name="student.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/student.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state>
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepage.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/homepage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+            <state relative-caret-position="150">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -109,13 +108,13 @@
         <option value="$PROJECT_DIR$/templates/add_student.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/AddUser.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/templates/list_students.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Student.php" />
         <option value="$PROJECT_DIR$/src/Entity/Presence.php" />
-        <option value="$PROJECT_DIR$/templates/student.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/templates/homepage.html.twig" />
+        <option value="$PROJECT_DIR$/templates/student.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/PageController.php" />
+        <option value="$PROJECT_DIR$/templates/list_students.html.twig" />
+        <option value="$PROJECT_DIR$/templates/homepage.html.twig" />
       </list>
     </option>
   </component>
@@ -306,7 +305,7 @@
       <workItem from="1523612375833" duration="2937000" />
       <workItem from="1523618107061" duration="2962000" />
       <workItem from="1523702274811" duration="4498000" />
-      <workItem from="1523807230247" duration="34441000" />
+      <workItem from="1523807230247" duration="35340000" />
     </task>
     <task id="LOCAL-00001" summary="Added Form">
       <created>1523705741107</created>
@@ -399,11 +398,25 @@
       <option name="project" value="LOCAL" />
       <updated>1524067217667</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="działa wybór dnia">
+      <created>1524133018823</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1524133018823</updated>
+    </task>
+    <task id="LOCAL-00015" summary="dzienniczek działa">
+      <created>1524133693326</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1524133693326</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44838000" />
+    <option name="totallyTimeSpent" value="45737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="-1" width="1606" height="880" extended-state="6" />
@@ -451,7 +464,9 @@
     <MESSAGE value="poprawki w wyświetlaniu listy obecności" />
     <MESSAGE value="możliwość ustawienia obecności, spóźnienia lub nie obecności" />
     <MESSAGE value="poprawki w wyświetlaniu treści" />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawki w wyświetlaniu treści" />
+    <MESSAGE value="działa wybór dnia" />
+    <MESSAGE value="dzienniczek działa" />
+    <option name="LAST_COMMIT_MESSAGE" value="dzienniczek działa" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Entity/AddUser.php">
@@ -604,39 +619,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Presence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/student.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/list_students.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/homepage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/PageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="139" column="62" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+        <state relative-caret-position="318">
+          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
           <folding>
             <element signature="e#115#138#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/student.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/list_students.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="97" selection-start-line="7" selection-start-column="97" selection-end-line="7" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/homepage.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
         </state>
       </provider>
     </entry>
