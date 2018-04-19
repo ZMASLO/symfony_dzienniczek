@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}
+Obecność
+{% endblock %}
 {% block body %}
     <a href="/date/{{ date|date_modify("-1 day")|date("Y-m-d")}}"><button> < </button></a>
     {{ date|date("Y-m-d") }}

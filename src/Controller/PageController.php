@@ -119,7 +119,7 @@ class PageController extends AbstractController
      */
     public function presence($id, $status, $date){
         if($status!='O' && $status!='N' && $status!='S'){
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('date', ['date' => $date]);
         }
         $entityManager = $this->getDoctrine()->getManager();
         $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
