@@ -5,7 +5,7 @@ Lista uczniów
 {% block body %}
     {% for student in students %}
         <div>
-            <a href="/student/{{ student.id }}"> {{ student.name }} {{ student.secondname}} </a> <button>Edytuj</button> <a href="/delete_student/{{ student.id }}"><button>Usuń</button></a>
+            <a href="/student/{{ student.id }}"> {{ student.name }} {{ student.secondname}} </a> <a href="/delete_student/{{ student.id }}"><button>Usuń</button></a>
         </div>
     {% endfor %}
 {% endblock %}

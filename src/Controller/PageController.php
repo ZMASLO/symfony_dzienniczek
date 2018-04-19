@@ -28,11 +28,11 @@ class PageController extends AbstractController
      */
     public function homedir(){
         $today = new \DateTime();
-        return $this->redirectToRoute('date', ['date'=> '2018-04-19']);
+        return $this->redirectToRoute('date', ['date'=> $today->format("Y-m-d")]);
     }
 
     /**
-     * @Route("/{date}", name="date")
+     * @Route("/date/{date}", name="date")
      */
     public function homepage($date)
     {
@@ -53,7 +53,8 @@ class PageController extends AbstractController
     public function show($id){
         $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
         $presence=$this->getDoctrine()->getRepository(Presence::class)->findBy(
-            ['student' => $id]
+            ['student' => $id],
+            ['date' => 'ASC']
         );
         if(!$student){
             throw $this->createNotFoundException(
@@ -133,7 +134,7 @@ class PageController extends AbstractController
             $presence->setStatus($status);
             $entityManager->persist($presence);
             $entityManager->flush();
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('date', ['date' => $date]);
         }
         $presence->setStatus($status);
         $entityManager->flush();
