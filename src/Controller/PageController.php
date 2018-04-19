@@ -22,18 +22,28 @@ use Symfony\Component\Validator\Constraints\DateTime;
 
 class PageController extends AbstractController
 {
+
     /**
-     * @Route("/", name="homepage")
+     *@Route("/", name="homepage")
      */
-    public function homepage()
+    public function homedir(){
+        $today = new \DateTime();
+        return $this->redirectToRoute('date', ['date'=> '2018-04-19']);
+    }
+
+    /**
+     * @Route("/{date}", name="date")
+     */
+    public function homepage($date)
     {
         $student=$this->getDoctrine()->getRepository(Student::class)->findAll();
         $presence=$this->getDoctrine()->getRepository(Presence::class)->findBy([
-            'date' => new \DateTime()
+            'date' => new \DateTime($date)
         ]);
         return $this->render('homepage.html.twig',[
             'students' => $student,
-            'presence' => $presence
+            'presence' => $presence,
+            'date' => new \DateTime($date)
         ]);
     }
 
@@ -104,9 +114,9 @@ class PageController extends AbstractController
 
     }
     /**
-     * @Route("/presence/{id}/{status}")
+     * @Route("/presence/{id}/{status}/{date}")
      */
-    public function presence($id, $status){
+    public function presence($id, $status, $date){
         if($status!='O' && $status!='N' && $status!='S'){
             return $this->redirectToRoute('homepage');
         }
@@ -114,12 +124,12 @@ class PageController extends AbstractController
         $student = $this->getDoctrine()->getRepository(Student::class)->find($id);
         $presence = $this->getDoctrine()->getRepository(Presence::class)->findOneBy([
             'student' => $id,
-            'date' => new \DateTime()
+            'date' => new \DateTime($date)
         ]);
         if(!$presence){
             $presence = new Presence();
             $presence->setStudent($student);
-            $presence->setDate(new \DateTime());
+            $presence->setDate(new \DateTime($date));
             $presence->setStatus($status);
             $entityManager->persist($presence);
             $entityManager->flush();
@@ -127,6 +137,6 @@ class PageController extends AbstractController
         }
         $presence->setStatus($status);
         $entityManager->flush();
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('date', ['date' => $date]);
     }
 }

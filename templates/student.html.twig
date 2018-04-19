@@ -7,7 +7,7 @@
 
     <div>
         {% for pre in presence %}
-            <div>{{ pre.date|date("d/m/Y") }} {{ pre.status }}</div>
+            <div>{{ pre.date|date("Y-m-d") }} {{ pre.status }}</div>
         {% endfor %}
     </div>
 

@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <a href="/{{ date|date_modify("-1 day")|date("Y-m-d")}}"><button> < </button></a>
+    {{ date|date("Y-m-d") }}
+    <a href="/{{ date|date_modify("+1 day")|date("Y-m-d")}}"><button> > </button></a>
     {% for student in students %}
         <div>
             <a href="/student/{{ student.id }}"> {{ student.name }} {{ student.secondname }} </a> Stan:
@@ -9,9 +12,9 @@
                     {{ pre.status }}
                 {% endif %}
             {% endfor %}
-            <a href="/presence/{{student.id}}/O"><button>Obecny</button></a>
-            <a href="/presence/{{student.id}}/S"><button>Spóźniony</button></a>
-            <a href="/presence/{{student.id}}/N"><button>Nie obecny</button></a>
+            <a href="/presence/{{student.id}}/O/{{ date|date("Y-m-d") }}"><button>Obecny</button></a>
+            <a href="/presence/{{student.id}}/S/{{ date|date("Y-m-d") }}"><button>Spóźniony</button></a>
+            <a href="/presence/{{student.id}}/N/{{ date|date("Y-m-d") }}"><button>Nie obecny</button></a>
         </div>
     {% endfor %}
 {% endblock %}
