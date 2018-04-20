@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a047d76d-b4c5-4fb4-94ae-1c10a73b0729" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="a047d76d-b4c5-4fb4-94ae-1c10a73b0729" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -323,7 +320,7 @@
       <workItem from="1523612375833" duration="2937000" />
       <workItem from="1523618107061" duration="2962000" />
       <workItem from="1523702274811" duration="4498000" />
-      <workItem from="1523807230247" duration="36282000" />
+      <workItem from="1523807230247" duration="36961000" />
     </task>
     <task id="LOCAL-00001" summary="Added Form">
       <created>1523705741107</created>
@@ -444,11 +441,25 @@
       <option name="project" value="LOCAL" />
       <updated>1524134527422</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="dodano zrzuty ekranu">
+      <created>1524134802297</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1524134802297</updated>
+    </task>
+    <task id="LOCAL-00019" summary="dodano zrzuty ekranu">
+      <created>1524134864490</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1524134864490</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46679000" />
+    <option name="totallyTimeSpent" value="47358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="-1" width="1606" height="880" extended-state="6" />
@@ -500,7 +511,8 @@
     <MESSAGE value="dzienniczek działa" />
     <MESSAGE value="poprawki w zarządzaniu datą" />
     <MESSAGE value="poprawki błędów w przekierowaniach" />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawki błędów w przekierowaniach" />
+    <MESSAGE value="dodano zrzuty ekranu" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodano zrzuty ekranu" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Entity/AddUser.php">
